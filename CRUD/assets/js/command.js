@@ -5,7 +5,7 @@ var user = {
   userName: ['Alan','Silva','Bonfim']
 }
 
-var indexUser = Math.floor(Math.random() * user.userName.length);
+var indexUser = Math.floor(Math.random() * user.userName.length); //Inseri esse comando para selecionar usuários aleatorios do arrau "User"
 
 const miniTwitter = {
     posts: [
@@ -21,7 +21,7 @@ const miniTwitter = {
    function newPost(dados) {
     miniTwitter.posts.push({
         id: miniTwitter.posts.length + 1,
-        username: (user.userName[indexUser]),
+        username: (user.userName[indexUser]), //Referencia para o comando de seleção aleatoria
         ower: dados.ower,
         content: dados.content
     });
@@ -32,7 +32,7 @@ const miniTwitter = {
   
   console.log(miniTwitter.posts)
 
-  // READ
+  // READ =
   function readerPosts() {
     return miniTwitter.posts;
   }
@@ -52,14 +52,14 @@ console.log(readerPosts())
   console.log(readerPosts())
 
   // DELETE
-  function apagaPost(id) {
+  function delPost(id) {
     const listaDePostsAtualizada = readerPosts().filter((postAtual) => {
         return postAtual.id !== id;
     })
     miniTwitter.posts = listaDePostsAtualizada
   }
-apagaPost(1);
-apagaPost(2);
-apagaPost(3);
+delPost(1);
+delPost(2);
+delPost(3);
 
 console.log(readerPosts());
